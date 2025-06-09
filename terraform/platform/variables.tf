@@ -8,9 +8,9 @@ variable "bucket" {
   type = string
 }
 
-variable "repo" {
-  type = string
-}
+# variable "repo" {
+#   type = string
+# }
 
 variable "monitoring_namespace" {
   default = "monitoring"
