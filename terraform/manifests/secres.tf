@@ -10,7 +10,7 @@ resource "kubernetes_secret" "repo" {
   data = {
     name          = "iti_gp"
     type          = "git"
-    url           = "https://github.com/danielfarag/iti-eks-gitops-capstone"
+    url           = "https://github.com/AdhamBasheir/iti-test.git"
     username      = var.github_name
     password      = var.github_privatekey
   }

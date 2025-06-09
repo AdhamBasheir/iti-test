@@ -11,3 +11,11 @@ variable "bucket" {
 variable "repo" {
   type = string
 }
+
+variable "monitoring_namespace" {
+  default = "monitoring"
+}
+
+variable "prometheus_chart_version" {
+  default = "59.0.0"
+}

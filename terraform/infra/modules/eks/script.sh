@@ -16,7 +16,7 @@ echo "${role_arn}" > role
 # install ssm & git
 yum install -y amazon-ssm-agent git
 
-curl -o deploy.sh https://raw.githubusercontent.com/danielfarag/iti-eks-gitops-capstone/main/utils/sh/deploy.sh
+curl -o deploy.sh https://raw.githubusercontent.com/AdhamBasheir/iti-test.git/main/utils/sh/deploy.sh
 
 chmod +x deploy.sh
 
