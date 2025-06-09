@@ -148,7 +148,7 @@ resource "kubernetes_manifest" "gateway-api" {
     kind       = "Application"
     metadata = {
       name      = "gateway-api"
-      namespace = "nginx-gateway"
+      namespace = "argocd"
     }
     spec = {
       project = "default"
