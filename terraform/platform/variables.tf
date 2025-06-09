@@ -1,5 +1,5 @@
 variable "region" {
-  type = string
+  type    = string
   default = "us-east-1"
 }
 
@@ -16,10 +16,6 @@ variable "monitoring_namespace" {
   default = "monitoring"
 }
 
-variable "prometheus_chart_version" {
-  default = "59.0.0"
-}
+variable "prometheus_chart_version" {}
 
-variable "argocd_chart_version" {
-  default = "6.4.0"
-}
+variable "argocd_chart_version" {}
