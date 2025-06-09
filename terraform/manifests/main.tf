@@ -171,3 +171,35 @@ resource "kubernetes_manifest" "gateway-api" {
     }
   }
 }
+
+
+# resource "kubernetes_manifest" "monitoring" {
+#   depends_on = [kubernetes_secret.repo]
+#   manifest = {
+#     apiVersion = "argoproj.io/v1alpha1"
+#     kind       = "Application"
+#     metadata = {
+#       name      = "gateway-api"
+#       namespace = "argocd"
+#     }
+#     spec = {
+#       project = "default"
+#       source = {
+#         repoURL        = "https://github.com/AdhamBasheir/iti-test.git"
+#         targetRevision = "main"
+#         path           = "cd/monitoring"
+#         kustomize      = {}
+#       }
+#       destination = {
+#         server    = "https://kubernetes.default.svc"
+#         namespace = "monitoring"
+#       }
+#       syncPolicy = {
+#         automated = {
+#           prune    = true
+#           selfHeal = true
+#         }
+#       }
+#     }
+#   }
+# }
