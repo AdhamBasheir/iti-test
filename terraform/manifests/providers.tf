@@ -13,5 +13,15 @@ provider "aws" {
 }
 
 provider "kubernetes" {
-  # config_path    = "~/.kube/config"
+  host                   = data.terraform_remote_state.infra.outputs.cluster_endpoint
+  cluster_ca_certificate = base64decode(data.terraform_remote_state.infra.outputs.cluster_certificate_authority)
+  token                  = data.terraform_remote_state.infra.outputs.token
+}
+
+provider "helm" {
+  kubernetes {
+    host                   = data.terraform_remote_state.infra.outputs.cluster_endpoint
+    cluster_ca_certificate = base64decode(data.terraform_remote_state.infra.outputs.cluster_certificate_authority)
+    token                  = data.terraform_remote_state.infra.outputs.token
+  }
 }

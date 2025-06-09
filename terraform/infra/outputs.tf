@@ -51,13 +51,13 @@ output "external_secrets_role_arn" {
 
 ########################################
 
-# output "cluster_endpoint" {
-#   value = module.eks.cluster_endpoint
-# }
-# output "cluster_certificate_authority_data" {
-#   value = module.eks.cluster_certificate_authority_data
-# }
-# output "cluster_token" {
-#   value = module.eks.cluster_token
-#   sensitive = true
-# }
+output "cluster_endpoint" {
+  value = module.eks.cluster_endpoint
+}
+output "cluster_certificate_authority_data" {
+  value = module.eks.cluster_certificate_authority_data
+}
+output "cluster_token" {
+  value = module.eks.cluster_token
+  sensitive = true
+}
