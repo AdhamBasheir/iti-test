@@ -14,14 +14,14 @@ provider "aws" {
 
 provider "kubernetes" {
   host                   = data.terraform_remote_state.infra.outputs.cluster_endpoint
-  cluster_ca_certificate = base64decode(data.terraform_remote_state.infra.outputs.cluster_certificate_authority)
-  token                  = data.terraform_remote_state.infra.outputs.token
+  cluster_ca_certificate = base64decode(data.terraform_remote_state.infra.outputs.cluster_certificate_authority_data)
+  token                  = data.terraform_remote_state.infra.outputs.cluster_token
 }
 
 provider "helm" {
   kubernetes {
     host                   = data.terraform_remote_state.infra.outputs.cluster_endpoint
-    cluster_ca_certificate = base64decode(data.terraform_remote_state.infra.outputs.cluster_certificate_authority)
-    token                  = data.terraform_remote_state.infra.outputs.token
+    cluster_ca_certificate = base64decode(data.terraform_remote_state.infra.outputs.cluster_certificate_authority_data)
+    token                  = data.terraform_remote_state.infra.outputs.cluster_token
   }
 }
