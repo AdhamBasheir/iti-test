@@ -19,3 +19,7 @@ variable "monitoring_namespace" {
 variable "prometheus_chart_version" {
   default = "59.0.0"
 }
+
+variable "argocd_chart_version" {
+  default = "6.4.0"
+}
